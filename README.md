@@ -29,7 +29,7 @@ cd path/to/download_ps4_game_update_console
 
 2. Run the program with the required arguments:
 ```bash
-download_ps4_game_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <Title_ID>
+download_ps4_game_update_console.exe -key <HMAC-SHA256 Patch Pkg URL Key> -title <Title_ID>
 ```
 <br><br>
 ## Python
@@ -40,7 +40,7 @@ cd path/to/download_ps4_game_update
 ```
 4. Execute the program with the following command, providing the necessary arguments:
 ```bash
-python download_ps4_game_update.py -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <Title_ID>
+python download_ps4_game_update.py -key <HMAC-SHA256 Patch Pkg URL Key> -title <Title_ID>
 ```
 
 <br><br>
@@ -58,9 +58,9 @@ chmod +x download_ps4_game_update_console
 ```
 4. Execute the program with the following command, providing the necessary arguments:
 ```bash
-./download_ps4_game_update_console -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <Title_ID>
+./download_ps4_game_update_console -key <HMAC-SHA256 Patch Pkg URL Key> -title <Title_ID>
 ```
 <br><br><br>
-Replace `<HMAC_SHA256_Patch_Pkg_URL_Key>` and `<Title_ID>` with actual values.
+Replace `<HMAC-SHA256 Patch Pkg URL Key>` and `<Title_ID>` with actual values.
 
 Make sure to replace `path/to/download_ps4_game_update_console` and `path/to/linux-x64/download_ps4_game_update` with the actual paths where `download_ps4_game_update_console` executable is located on your Windows and Linux systems respectively.
