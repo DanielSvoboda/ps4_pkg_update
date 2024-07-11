@@ -18,6 +18,7 @@ Download: [Download PS4 Game Update](https://github.com/DanielSvoboda/download_p
 Enter the **"Title ID"** and **"HMAC-SHA256 Patch Pkg URL Key"** into their respective fields.  
 Click **"Check Updates"** to retrieve information about the game update.
 
+<br><br>
 ## Windows Console
 
 1. Open Command Prompt and navigate to the directory where `download_ps4_game_update_console.exe` is located:
@@ -29,7 +30,7 @@ cd path/to/download_ps4_game_update_console
 ```bash
 download_ps4_game_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <Title_ID>
 ```
-
+<br><br>
 ## Linux Console 
 
 1. Download the `linux-x64.rar` file and extract it to a directory on your Linux machine.
