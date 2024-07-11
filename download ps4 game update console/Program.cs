@@ -2,37 +2,30 @@
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Forms;
 using System.Xml;
 
-namespace download_ps4_game_update
+namespace DownloadPS4GameUpdateConsole
 {
-    public partial class Form1 : Form
+    class Program
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        static string urlKey = "";
+        static string titleId = "";
 
-        private void button2_Check_Updates(object sender, EventArgs e)
+        static void Main(string[] args)
         {
-            if (textBox_HMAC_SHA256_Patch_Pkg_URL_Key.Text.Length != 64)
+            if (args.Length < 4 || args[0] != "-key" || args[2] != "-title")
             {
-                MessageBox.Show($"HMAC_SHA256_Patch_Pkg_URL_Key invalid\nMust contain 64 characters!");
+                ShowHelp();
                 return;
             }
 
-            string TitleId = textBox1_TitleId.Text;
-            if (TitleId.Length != 9)
-            {
-                MessageBox.Show($"Title ID: {TitleId} invalid\nMust contain 9 characters!\nCorrect example: CUSA00001");
-                return;
-            }
-
-            string xmlUrl = $"http://gs-sec.ww.np.dl.playstation.net/plo/np/{TitleId}/{GetHash(TitleId)}/{TitleId}-ver.xml";
+            urlKey = args[1];
+            titleId = args[3];
 
             try
             {
+                string xmlUrl = $"http://gs-sec.ww.np.dl.playstation.net/plo/np/{titleId}/{GetHash(titleId)}/{titleId}-ver.xml";
+
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(xmlUrl);
 
@@ -47,14 +40,10 @@ namespace download_ps4_game_update
                 string hexadecimal = int.Parse(system_ver.Value).ToString("X8");
                 string system_ver_formatted = $"{hexadecimal.Substring(0, 2)}.{hexadecimal.Substring(2, 2)}";
 
-                textBox1_Result.Text = "";
-                textBox1_Result.Text += $"Title: {title}\r\n";
-                textBox1_Result.Text += $"Version: {version}\r\n";
-                textBox1_Result.Text += $"Required Firmware: {system_ver_formatted}\r\n";
-
-                Action<double> displaySize = size =>
-                    textBox1_Result.Text += $"PKG Size: {(size > 1024 ? $"{size / 1024:0.##} GB" : $"{size:0.##} MB")}\r\n\r\n";
-                displaySize(sizeMB);
+                Console.WriteLine($"Title: {title}");
+                Console.WriteLine($"Version: {version}");
+                Console.WriteLine($"Required Firmware: {system_ver_formatted}");
+                Console.WriteLine($"PKG Size: {(sizeMB > 1024 ? $"{sizeMB / 1024:0.##} GB" : $"{sizeMB:0.##} MB")}");
 
                 XmlNode manifestNode = xmlDoc.SelectSingleNode("/titlepatch/tag/package/@manifest_url");
                 if (manifestNode == null)
@@ -80,23 +69,34 @@ namespace download_ps4_game_update
                         int urlEndIndex = json.IndexOf("\"", urlStartIndex);
                         string packageUrl = json.Substring(urlStartIndex, urlEndIndex - urlStartIndex);
 
-                        textBox1_Result.Text += $"{packageUrl}\r\n";
+                        Console.WriteLine(packageUrl);
 
                         urlStartIndex = json.IndexOf("\"url\":\"", urlEndIndex);
                     }
                 }
-                //textBox1_Result.Text += $"\r\nxmlUrl: {xmlUrl}\r\n";
-                //textBox1_Result.Text += $"manifestUrl: {manifestNode.Value}\r\n";
+
+                //Console.WriteLine($"\r\nxmlUrl: {xmlUrl}");
+                //Console.WriteLine($"manifestUrl: {manifestNode.Value}");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading and parsing XML: {ex.Message}");
+                Console.WriteLine($"Error loading and parsing XML: {ex.Message}");
             }
         }
 
-        private string GetHash(string gameID)
+        private static void ShowHelp()
         {
-            byte[] byteKey = StringToByteArray(textBox_HMAC_SHA256_Patch_Pkg_URL_Key.Text);
+#if WINDOWS
+            Console.WriteLine("Usage: download_ps4_game_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>");
+#else
+            Console.WriteLine("Usage: ./download_ps4_game_update_console -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>");
+#endif
+        }
+
+
+        private static string GetHash(string gameID)
+        {
+            byte[] byteKey = StringToByteArray(urlKey);
             byte[] dataBytes = Encoding.UTF8.GetBytes($"np_{gameID}");
 
             using (var hmacsha256 = new HMACSHA256(byteKey))
@@ -115,11 +115,6 @@ namespace download_ps4_game_update
                 bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
             }
             return bytes;
-        }
-
-        private void linkLabel_github_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/DanielSvoboda/download_ps4_game_update");
         }
     }
 }

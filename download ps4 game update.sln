@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "download ps4 game update", "download ps4 game update\download ps4 game update.csproj", "{ECB0A47A-287B-4178-8088-013420B478B3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "download ps4 game update console", "download ps4 game update console\download ps4 game update console.csproj", "{FA5F8024-94E7-4040-BD6A-14B31E348ABF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ECB0A47A-287B-4178-8088-013420B478B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECB0A47A-287B-4178-8088-013420B478B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECB0A47A-287B-4178-8088-013420B478B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5F8024-94E7-4040-BD6A-14B31E348ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5F8024-94E7-4040-BD6A-14B31E348ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5F8024-94E7-4040-BD6A-14B31E348ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5F8024-94E7-4040-BD6A-14B31E348ABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
