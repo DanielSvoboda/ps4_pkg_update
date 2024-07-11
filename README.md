@@ -5,7 +5,7 @@ Providing the **"Title ID"** and **"PS4 HMAC-SHA256 Patch Pkg URL Key"**
 
 Download: [Download PS4 Game Update](https://github.com/DanielSvoboda/download_ps4_game_update/releases)  
 - [Windows with interface](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/download.ps4.game.update.exe)
-- [Windows Console](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/download_ps4_game_update_console.exe) 
+- [Windows Console](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/download_ps4_game_update_console.rar) 
 - [Linux Console](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/linux-x64.rar)
 
 ![Screenshot 1](https://raw.githubusercontent.com/DanielSvoboda/download_ps4_game_update/main/Print1.png)
