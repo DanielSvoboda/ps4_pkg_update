@@ -22,6 +22,18 @@ namespace DownloadPS4GameUpdateConsole
             urlKey = args[1];
             titleId = args[3];
 
+            if (urlKey.Length != 64)
+            {
+                Console.WriteLine($"HMAC_SHA256_Patch_Pkg_URL_Key invalid\nMust contain 64 characters!");
+                return;
+            }
+
+            if (titleId.Length != 9)
+            {
+                Console.WriteLine($"Title ID: {titleId} invalid\nMust contain 9 characters!\nCorrect example: CUSA00001");
+                return;
+            }
+
             try
             {
                 string xmlUrl = $"http://gs-sec.ww.np.dl.playstation.net/plo/np/{titleId}/{GetHash(titleId)}/{titleId}-ver.xml";
