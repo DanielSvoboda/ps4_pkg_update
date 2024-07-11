@@ -7,6 +7,7 @@ Download: [Download PS4 Game Update](https://github.com/DanielSvoboda/download_p
 - [Windows with interface](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/download.ps4.game.update.exe)
 - [Windows Console](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/download_ps4_game_update_console.rar) 
 - [Linux Console](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/linux-x64.rar)
+- [Python](https://github.com/DanielSvoboda/download_ps4_game_update/releases/download/V2/download_ps4_game_update.py)
 
 ![Screenshot 1](https://raw.githubusercontent.com/DanielSvoboda/download_ps4_game_update/main/Print1.png)
 ![Screenshot 2](https://raw.githubusercontent.com/DanielSvoboda/download_ps4_game_update/main/Print2.png)
@@ -30,6 +31,18 @@ cd path/to/download_ps4_game_update_console
 ```bash
 download_ps4_game_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <Title_ID>
 ```
+<br><br>
+## Python
+
+1. Open a terminal and navigate to the directory where `download_ps4_game_update.py` is located:
+```bash
+cd path/to/download_ps4_game_update
+```
+4. Execute the program with the following command, providing the necessary arguments:
+```bash
+python download_ps4_game_update.py -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <Title_ID>
+```
+
 <br><br>
 ## Linux Console 
 
