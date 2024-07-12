@@ -108,7 +108,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 62;
-            this.label1.Text = "Version: 2.0";
+            this.label1.Text = "Version: 2.1";
             // 
             // Form1
             // 
@@ -127,7 +127,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Download PS4 Game Update";
+            this.Text = "PS4 pkg update";
             this.ResumeLayout(false);
             this.PerformLayout();
 

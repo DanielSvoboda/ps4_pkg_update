@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{ECB0A47A-287B-4178-8088-013420B478B3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>download_ps4_game_update</RootNamespace>
-    <AssemblyName>download ps4 game update</AssemblyName>
+    <RootNamespace>ps4_pkg_update</RootNamespace>
+    <AssemblyName>ps4_pkg_update</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

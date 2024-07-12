@@ -81,9 +81,9 @@ def main():
 
 def show_help():
     if os.name == 'nt':  # Windows
-        print("Usage: download_ps4_game_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>")
+        print("Usage: ps4_pkg_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>")
     else:  # Linux
-        print("Usage: ./download_ps4_game_update_console -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>")
+        print("Usage: ./ps4_pkg_update_console -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>")
 
 def get_hash(game_id):
     byte_key = string_to_byte_array(urlKey)

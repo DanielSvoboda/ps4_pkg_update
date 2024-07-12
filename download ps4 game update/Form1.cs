@@ -119,7 +119,7 @@ namespace download_ps4_game_update
 
         private void linkLabel_github_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/DanielSvoboda/download_ps4_game_update");
+            System.Diagnostics.Process.Start("https://github.com/DanielSvoboda/ps4_pkg_update");
         }
     }
 }

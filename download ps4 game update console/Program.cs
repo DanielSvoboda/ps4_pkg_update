@@ -99,9 +99,9 @@ namespace DownloadPS4GameUpdateConsole
         private static void ShowHelp()
         {
 #if WINDOWS
-            Console.WriteLine("Usage: download_ps4_game_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>");
+            Console.WriteLine("Usage: ps4_pkg_update_console.exe -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>");
 #else
-            Console.WriteLine("Usage: ./download_ps4_game_update_console -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>");
+            Console.WriteLine("Usage: ./ps4_pkg_update_console -key <HMAC_SHA256_Patch_Pkg_URL_Key> -title <TitleId>");
 #endif
         }
 
